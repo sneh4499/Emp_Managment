@@ -1,0 +1,56 @@
+﻿@media(max-width: 768.75px) {
+    .report_datepicker_row .sub_btn {
+        padding-left: 0;
+    }
+
+    .report_datepicker_row .date_label {
+        padding-right: 0;
+        padding-top: 8px !important;
+    }
+
+    .perent_department_sec {
+        padding-top: 24px;
+    }
+
+    .add_person_pic .wrap-custom-file {
+        width: 120px;
+        height: 150px;
+    }
+
+    .add_person_pic .wrap-custom-file label span {
+        font-size: 16px;
+    }
+    
+}
+@media(max-width: 670px) {
+    .form-material.floating > label {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 575.75px) {
+    .detail_page .block.block-rounded > .block-content:last-child {
+        min-height: auto;
+    }
+    .employee_info_part {
+        margin: 0;
+        padding: 0;
+    }
+    .swal2-icon {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .modal.swal2-show{
+        max-width: 85%;
+    }
+}
+@media(max-width: 455px) {
+    footer .float-right strong {
+        display: block;
+    }
+}
+@media(max-width: 420px) {
+    .add_employee .btn {
+        padding: .571429rem 0.9rem;
+    }
+}

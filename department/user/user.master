@@ -1,0 +1,618 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="user.master.cs" Inherits="department_user_user" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Welcome to Trackingbean</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <meta name="description" content="Trackingbean">
+    <meta name="author" content="pixelcave">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Trackingbean">
+    <meta property="og:site_name" content="Codebase">
+    <meta property="og:description" content="Trackingbean">
+    <meta property="og:type" content="CRM">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="../../assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/media/favicons/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
+
+    <!-- Stylesheets -->
+
+   <!-- Page JS Plugins CSS -->
+    <link rel="stylesheet" href="../../assets/js/plugins/slick/slick.css" />
+    <link rel="stylesheet" href="../../assets/js/plugins/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../../assets/js/plugins/datatables/dataTables.bootstrap4.css">
+    <!-- Fonts and Codebase framework -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700" />
+    <link href="../../assets/js/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/js/plugins/jquery-auto-complete/jquery.auto-complete.min.css">
+    <link rel="stylesheet" href="../../assets/js/plugins/dropzonejs/dist/dropzone.css">
+    <link rel="stylesheet" href="../../assets/css/codebase.min.css" />
+    <link rel="stylesheet" href="../../assets/js/plugins/sweetalert2/sweetalert2.min.css">
+
+    <link href="../../assets/style.css" rel="stylesheet" />
+    <link href="../../assets/responsive.css" rel="stylesheet" />
+
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+     <%--<link rel="stylesheet" href="assets/css/themes/flat.min.css">--%> 
+    <!-- END Stylesheets -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+
+    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed">
+       
+        <!-- Sidebar -->
+        <!--
+                Helper classes
+
+                Adding .sidebar-mini-hide to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
+                Adding .sidebar-mini-show to an element will make it visible (opacity: 1) when the sidebar is in mini mode
+                    If you would like to disable the transition, just add the .sidebar-mini-notrans along with one of the previous 2 classes
+
+                Adding .sidebar-mini-hidden to an element will hide it when the sidebar is in mini mode
+                Adding .sidebar-mini-visible to an element will show it only when the sidebar is in mini mode
+                    - use .sidebar-mini-visible-b if you would like to be a block when visible (display: block)
+            -->
+        <nav id="sidebar">
+            <!-- Sidebar Content -->
+            <div class="sidebar-content">
+                <!-- Side Header -->
+                <div class="content-header content-header-fullrow px-15">
+                    <!-- Mini Mode -->
+                    <div class="content-header-section sidebar-mini-visible-b">
+                        <!-- Logo -->
+                        <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
+                            <span class="text-dual-primary-dark">c</span>
+                            <span class="text-primary">b</span>
+                        </span>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Mini Mode -->
+
+                    <!-- Normal Mode -->
+                    <div class="content-header-section text-center align-parent sidebar-mini-hidden">
+                        <!-- Close Sidebar, Visible only on mobile screens -->
+                        <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                        <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none align-v-r" data-toggle="layout" data-action="sidebar_close">
+                            <i class="fa fa-times text-danger"></i>
+                        </button>
+                        <!-- END Close Sidebar -->
+
+                        <!-- Logo -->
+                        <div class="content-header-item">
+                            <a class="link-effect font-w700" href="../../department/user/index.aspx">
+                               <img src="../../assets/logo.gif" alt="Image Not Found"  class="img-fluid"/>
+                            </a>
+                        </div>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Normal Mode -->
+                </div>
+                <!-- END Side Header -->
+
+                <!-- Side User -->
+                <div class="content-side content-side-full content-side-user px-10 align-parent">
+                    <!-- Visible only in mini mode -->
+                    <div class="sidebar-mini-visible-b align-v animated fadeIn">
+                        <img class="img-avatar img-avatar32" src="<%=img %>" alt="">
+                    </div>
+                    <!-- END Visible only in mini mode -->
+
+                    <!-- Visible only in normal mode -->
+                    <div class="sidebar-mini-hidden-b text-center">
+                        <a class="img-link" href="<%=img %>">
+                            <img class="img-avatar" src="<%=img %>" alt="">
+                        </a>
+                        <ul class="list-inline mt-10">
+                            <li class="list-inline-item">
+                                <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase"><b>Welcome, </b><%=name%></a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!-- END Visible only in normal mode -->
+                </div>
+                <!-- END Side User -->
+
+                <!-- Side Navigation -->
+                <div class="content-side content-side-full">
+                    <ul class="nav-main">
+                        <li>
+                            <a class="active" href="../../department/user/index.aspx">
+                                <i class="si si-cup"></i>
+                                <span class="sidebar-mini-hide">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <%--<li class="nav-main-heading"><span class="sidebar-mini-visible">UI</span><span class="sidebar-mini-hidden">User Interface</span></li>--%>
+                       <li>
+                            <a href="../../task/empcheckinout/checkinout.aspx">
+                                <i class="fa fa-truck"></i>
+                                <span class="sidebar-mini-hide">Start/Stop Journey</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../task/emptask/emptask.aspx">
+                                <i class="si si-puzzle"></i>
+                                <span class="sidebar-mini-hide">Task</span>
+                            </a>
+                        </li>
+
+                       <%-- <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                <i class="fa fa-map-marker"></i>
+                                <span class="sidebar-mini-hide">Location</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="../../task/emplocation/emptrackpath.aspx">Live Location</a>
+                                </li>
+                           
+                            </ul>
+                        </li>--%>
+                        <li style="display:none">
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                <i class="fa fa-file-o" aria-hidden="true"></i>
+                                <span class="sidebar-mini-hide">Jobs</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="../../task/jcf/joblist.aspx">Jobs List</a>
+                                </li>
+                                
+
+                            </ul>
+                        </li>
+                       <%-- <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                <i class="fa fa-file-o" aria-hidden="true"></i>
+                                <span class="sidebar-mini-hide">Reports</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="../../task/empreports/empattendance.aspx">Attendance Report</a>
+                                </li>
+                                <li>
+                                    <a href="../../task/empreports/emptask.aspx">Task Report</a>
+                                </li>
+
+                            </ul>
+                        </li>--%>
+                    </ul>
+                </div>
+                <!-- END Side Navigation -->
+            </div>
+            <!-- Sidebar Content -->
+        </nav>
+        <!-- END Sidebar -->
+
+        <!-- Header -->
+        <header id="page-header">
+            <!-- Header Content -->
+            <div class="content-header">
+                <!-- Left Section -->
+                <div class="content-header-section">
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="sidebar_toggle">
+                        <i class="fa fa-navicon"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+
+                    <!-- Open Search Section -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <!-- END Open Search Section -->
+
+                    <!-- Layout Options (used just for demonstration) -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-circle btn-dual-secondary" id="page-header-options-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-wrench"></i>
+                        </button>
+                        <div class="dropdown-menu min-width-300" aria-labelledby="page-header-options-dropdown">
+                            <h5 class="h6 text-center py-10 mb-10 border-b text-uppercase">Settings</h5>
+                             <h6 class="dropdown-header">Header</h6>
+                            <div class="row gutters-tiny text-center mb-5">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-sm btn-block btn-alt-secondary" data-toggle="layout" data-action="header_fixed_toggle">Fixed Mode</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-sm btn-block btn-alt-secondary d-none d-lg-block mb-10" data-toggle="layout" data-action="header_style_classic">Classic Style</button>
+                                </div>
+                            </div>
+                            <h6 class="dropdown-header">Sidebar</h6>
+                            <div class="row gutters-tiny text-center mb-5">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-sm btn-block btn-alt-secondary mb-10" data-toggle="layout" data-action="sidebar_style_inverse_off">Light</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-sm btn-block btn-alt-secondary mb-10" data-toggle="layout" data-action="sidebar_style_inverse_on">Dark</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- END Layout Options -->
+                </div>
+                <!-- END Left Section -->
+
+                <!-- Right Section -->
+                <div class="content-header-section">
+                    <!-- User Dropdown -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user d-sm-none"></i>
+                            <span class="d-none d-sm-inline-block"><%=name%></span>
+                            <i class="fa fa-angle-down ml-5"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right min-width-200" aria-labelledby="page-header-user-dropdown">
+                            <h5 class="h6 text-center py-10 mb-5 border-b text-uppercase">User</h5>
+                            <a class="dropdown-item" href="../../task/employee/details.aspx?id=<%=id %>">
+                            <i class="si si-user mr-5"></i>Profile
+                            </a>
+                          <%--  <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
+                                <span><i class="si si-envelope-open mr-5"></i>Inbox</span>
+                                <span class="badge badge-primary">3</span>
+                            </a>--%>
+                            
+                            
+                            <!-- END Side Overlay -->
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../../logout.aspx">
+                                <i class="si si-logout mr-5"></i>Sign Out
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END User Dropdown -->
+
+                    <!-- Notifications -->
+                    <%--<div class="btn-group" role="group">
+                        <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-flag"></i>
+                            <span class="badge badge-primary badge-pill">5</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right min-width-300" aria-labelledby="page-header-notifications">
+                            <h5 class="h6 text-center py-10 mb-0 border-b text-uppercase">Notifications</h5>
+                            <ul class="list-unstyled my-20">
+                                <li>
+                                    <a class="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                        <div class="ml-5 mr-15">
+                                            <i class="fa fa-fw fa-check text-success"></i>
+                                        </div>
+                                        <div class="media-body pr-10">
+                                            <p class="mb-0">You’ve upgraded to a VIP account successfully!</p>
+                                            <div class="text-muted font-size-sm font-italic">15 min ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                        <div class="ml-5 mr-15">
+                                            <i class="fa fa-fw fa-exclamation-triangle text-warning"></i>
+                                        </div>
+                                        <div class="media-body pr-10">
+                                            <p class="mb-0">Please check your payment info since we can’t validate them!</p>
+                                            <div class="text-muted font-size-sm font-italic">50 min ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                        <div class="ml-5 mr-15">
+                                            <i class="fa fa-fw fa-times text-danger"></i>
+                                        </div>
+                                        <div class="media-body pr-10">
+                                            <p class="mb-0">Web server stopped responding and it was automatically restarted!</p>
+                                            <div class="text-muted font-size-sm font-italic">4 hours ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                        <div class="ml-5 mr-15">
+                                            <i class="fa fa-fw fa-exclamation-triangle text-warning"></i>
+                                        </div>
+                                        <div class="media-body pr-10">
+                                            <p class="mb-0">Please consider upgrading your plan. You are running out of space.</p>
+                                            <div class="text-muted font-size-sm font-italic">16 hours ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-body-color-dark media mb-15" href="javascript:void(0)">
+                                        <div class="ml-5 mr-15">
+                                            <i class="fa fa-fw fa-plus text-primary"></i>
+                                        </div>
+                                        <div class="media-body pr-10">
+                                            <p class="mb-0">New purchases! +$250</p>
+                                            <div class="text-muted font-size-sm font-italic">1 day ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-center mb-0" href="javascript:void(0)">
+                                <i class="fa fa-flag mr-5"></i>View All
+                            </a>
+                        </div>
+                    </div>--%>
+                    <!-- END Notifications -->
+
+                    <!-- Toggle Side Overlay -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+
+                    <!-- END Toggle Side Overlay -->
+                </div>
+                <!-- END Right Section -->
+            </div>
+            <!-- END Header Content -->
+
+            <!-- Header Search -->
+            <div id="page-header-search" class="overlay-header">
+                <div class="content-header content-header-fullrow">
+                    <form action="#" method="post">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <!-- Close Search Section -->
+                                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                                <button type="button" class="btn btn-secondary" data-toggle="layout" data-action="header_search_off">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                                <!-- END Close Search Section -->
+                            </div>
+                            <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Search or ESC.."  name="page-header-search-input">
+                            <%--<div class="input-group-append">
+                                <button type="submit" class="btn btn-secondary">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>--%>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END Header Search -->
+
+            <!-- Header Loader -->
+            <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
+            <div id="page-header-loader" class="overlay-header bg-primary">
+                <div class="content-header content-header-fullrow text-center">
+                    <div class="content-header-item">
+                        <i class="fa fa-sun-o fa-spin text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- END Header Loader -->
+        </header>
+        <!-- END Header -->
+
+
+
+
+
+        <form id="form1" runat="server" style="min-height:541px;">
+            <div id="dev-table">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+
+
+
+        <!-- Footer -->
+    <footer id="page-footer" class="opacity-1 ">
+            <div class="content py-20 font-size-xs clearfix">
+                <div class="container font-size-h6" style="text-align:center">
+                    <%--Copyright &copy; 2017-19 | --%>Proudly Powered by <a href="http://brainbean.in/" target="_blank">BrainBean TechnoLabs</a>.
+                </div>
+               <%-- <div class="float-right">
+                    <strong class="pr-10 font-size-h6">Follow Us </strong>
+                    <a class="pr-2 font-size-h6" href="https://www.facebook.com/BrainBeanTechnolabs/" target="_blank"><i class="fa fa-facebook "></i></a>
+                    <a class="pr-2 font-size-h6" href="https://www.instagram.com/brainbean.in/" target="_blank"><i class="fa fa-instagram "></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>--%>
+            </div>
+        </footer>
+        <!-- END Footer -->
+    </div>
+
+
+
+
+
+
+
+    <!-- Onboarding Modal functionality is initialized in js/pages/be_pages_dashboard.min.js which was auto compiled from _es6/pages/be_pages_dashboard.js -->
+
+    <%--<div class="modal fade" id="modal-onboarding" tabindex="-1" role="dialog" aria-labelledby="modal-onboarding" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-popout" role="document">
+                <div class="modal-content rounded">
+                    <div class="block block-rounded block-transparent mb-0 bg-pattern" style="background-image: url('../../assets/media/various/bg-pattern-inverse.png');">
+                        <div class="block-header justify-content-end">
+                            <div class="block-options">
+                                <a class="font-w600 text-danger" href="#" data-dismiss="modal" aria-label="Close">
+                                    Skip Intro
+                                </a>
+                            </div>
+                        </div>
+                        <div class="block-content block-content-full">
+                            <div class="js-slider slick-dotted-inner" data-dots="true" data-arrows="false" data-infinite="false">
+                                <div class="pb-50">
+                                    <div class="row justify-content-center text-center">
+                                        <div class="col-md-10 col-lg-8">
+                                            <i class="si si-fire fa-4x text-primary"></i>
+                                            <h3 class="font-size-h2 font-w300 mt-20">Welcome to Codebase!</h3>
+                                            <p class="text-muted">
+                                                This is a modal you can show to your users when they first sign in to their dashboard. It is a great place to welcome and introduce them to your application and its functionality.
+                                            </p>
+                                            <button type="button" class="btn btn-sm btn-hero btn-noborder btn-primary mb-10 mx-5" onclick="jQuery('.js-slider').slick('slickGoTo', 1);">
+                                                Key features <i class="fa fa-arrow-right ml-5"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick-slide pb-50">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-10 col-lg-8">
+                                            <h3 class="font-size-h2 font-w300 mb-5">Backup</h3>
+                                            <p class="text-muted">
+                                                Backups are taken with every new change to ensure complete piece of mind. They are kept safe for immediate restores.
+                                            </p>
+                                            <h3 class="font-size-h2 font-w300 mb-5">Invoices</h3>
+                                            <p class="text-muted">
+                                                They are sent automatically to your clients with the completion of every project, so you don't have to worry about getting paid.
+                                            </p>
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-sm btn-hero btn-noborder btn-primary mb-10 mx-5" onclick="jQuery('.js-slider').slick('slickGoTo', 2);">
+                                                    Complete Profile <i class="fa fa-arrow-right ml-5"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slick-slide pb-50">
+                                    <div class="row justify-content-center text-center">
+                                        <div class="col-md-10 col-lg-8">
+                                            <i class="si si-note fa-4x text-primary"></i>
+                                            <h3 class="font-size-h2 font-w300 mt-20">Finally, let us know your name</h3>
+                                            <form class="push">
+                                                <input type="text" class="form-control form-control-lg py-20 border-2x" id="onboard-first-name" name="onboard-first-name" placeholder="Enter your first name..">
+                                            </form>
+                                            <button type="button" class="btn btn-sm btn-hero btn-noborder btn-success mb-10 mx-5" data-dismiss="modal" aria-label="Close">
+                                                Get Started <i class="fa fa-check ml-5"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>--%>
+
+    <!-- END Onboarding Modal -->
+
+
+   <script src="../../assets/js/codebase.core.min.js"></script>
+
+    <script src="../../assets/js/codebase.app.min.js"></script>
+
+    <!-- Page JS Plugins -->
+    <script src="../../assets/js/plugins/chartjs/Chart.bundle.min.js"></script>
+    <script src="../../assets/js/plugins/slick/slick.min.js"></script>
+
+    <script src="../../assets/js/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+    
+    <script src="../../assets/js/plugins/select2/js/select2.full.min.js"></script>
+
+    <script src="../../assets/js/plugins/jquery-auto-complete/jquery.auto-complete.min.js"></script>
+
+    <script src="../../assets/js/plugins/dropzonejs/dropzone.min.js"></script>
+
+    <script src="../../assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
+
+    <script src="../../assets/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    
+    <script src="../../assets/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+     
+    <script src="../../assets/js/plugins/gmapsjs/gmaps.min.js"></script>
+
+    <script src="../../assets/js/plugins/flot/jquery.flot.min.js"></script>
+    <script src="../../assets/js/plugins/flot/jquery.flot.resize.min.js"></script>
+
+    <script>jQuery(function(){ Codebase.helpers(['select2']); });</script>
+    <script>jQuery(function(){ Codebase.helpers('easy-pie-chart'); });</script>
+    <!-- Page JS Code -->
+    <script src="../../assets/js/pages/be_comp_charts.min.js"></script>
+    <script src="../../assets/js/pages/be_ui_activity.min.js"></script>
+    <script src="../../assets/js/pages/be_tables_datatables.min.js"></script>
+    <script src="../../assets/js/pages/be_comp_maps_google.min.js"></script>
+    <script src="../../assets/js/pages/be_forms_plugins.min.js"></script>
+    <script src="../../assets/js/pages/be_forms_wizard.min.js"></script>
+    <script src="../../assets/js/pages/be_pages_dashboard.min.js"></script>
+    <script src="../../assets/custom.js"></script>
+
+     <script>
+
+         /**
+ *   I don't recommend using this plugin on large tables, I just wrote it to make the demo useable. It will work fine for smaller tables 
+ *   but will likely encounter performance issues on larger tables.
+ *
+ *		<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+ *		$(input-element).filterTable()
+ *		
+ *	The important attributes are 'data-action="filter"' and 'data-filters="#table-selector"'
+ */
+         (function () {
+             'use strict';
+             var $ = jQuery;
+             $.fn.extend({
+                 filterTable: function () {
+                     return this.each(function () {
+                         $(this).on('keyup', function (e) {
+                             $('.filterTable_no_results').remove();
+                             var $this = $(this),
+                                 search = $this.val().toLowerCase(),
+                                 target = $this.attr('data-filters'),
+                                 $target = $(target),
+                                 $rows = $target.find('tbody tr');
+
+                             if (search == '') {
+                                 $rows.show();
+                             } else {
+                                 $rows.each(function () {
+                                     var $this = $(this);
+                                     $this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+                                 })
+                                 if ($target.find('tbody tr:visible').size() === 0) {
+                                     var col_count = $target.find('tr').first().find('td').size();
+                                     var no_results = $('<tr class="filterTable_no_results"><td colspan="' + col_count + '">No results found</td></tr>')
+                                     $target.find('tbody').append(no_results);
+                                 }
+                             }
+                         });
+                     });
+                 }
+             });
+             $('[data-action="filter"]').filterTable();
+         })(jQuery);
+
+         $(function () {
+             // attach table filter plugin to inputs
+             $('[data-action="filter"]').filterTable();
+
+             $('.container').on('click', '.panel-heading span.filter', function (e) {
+                 var $this = $(this),
+                     $panel = $this.parents('.panel');
+
+                 $panel.find('.panel-body').slideToggle();
+                 if ($this.css('display') != 'none') {
+                     $panel.find('.panel-body input').focus();
+                 }
+             });
+             $('[data-toggle="tooltip"]').tooltip();
+         })
+
+    </script>
+     
+
+</body>
+</html>

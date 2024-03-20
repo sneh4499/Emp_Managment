@@ -1,0 +1,550 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="department_admin_admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Welcome to Trackingbean</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+
+    <meta name="description" content="Trackingbean">
+    <meta name="author" content="pixelcave">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Trackingbean">
+    <meta property="og:site_name" content="Trackingbean">
+    <meta property="og:description" content="Trackingbean">
+    <meta property="og:type" content="CRM">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+   <%-- <link href="../../assets/js/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />--%>
+  
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="../../assets/media/favicons/favicon.png" />
+
+    <link rel="icon" type="image/png" sizes="192x192" href="../../assets/media/favicons/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/media/favicons/apple-touch-icon-180x180.png" />
+    <!-- END Icons -->
+
+    <!-- Stylesheets -->
+    <style>
+        .cap {
+            text-transform: capitalize;
+        }
+
+        .up {
+            text-transform: uppercase;
+        }
+    </style>
+    <!-- Page JS Plugins CSS -->
+    <link rel="stylesheet" href="../../assets/js/plugins/slick/slick.css" />
+    <link rel="stylesheet" href="../../assets/js/plugins/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../../assets/js/plugins/datatables/dataTables.bootstrap4.css">
+    <!-- Fonts and Codebase framework -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700" />
+    <link href="../../assets/js/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/js/plugins/jquery-auto-complete/jquery.auto-complete.min.css">
+    <link rel="stylesheet" href="../../assets/js/plugins/dropzonejs/dist/dropzone.css">
+    <link rel="stylesheet" href="../../assets/css/codebase.min.css" />
+    <link rel="stylesheet" href="../../assets/js/plugins/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="../../assets/js/plugins/nestable2/jquery.nestable.min.css">
+
+    <link href="../../assets/style.css" rel="stylesheet" />
+    <link href="../../assets/responsive.css" rel="stylesheet" />
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <!-- <link rel="stylesheet" href="assets/css/themes/flat.min.css"> -->
+    <!-- END Stylesheets -->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed">
+       
+        <!-- Sidebar -->
+        <!--
+                Helper classes
+
+                Adding .sidebar-mini-hide to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
+                Adding .sidebar-mini-show to an element will make it visible (opacity: 1) when the sidebar is in mini mode
+                    If you would like to disable the transition, just add the .sidebar-mini-notrans along with one of the previous 2 classes
+
+                Adding .sidebar-mini-hidden to an element will hide it when the sidebar is in mini mode
+                Adding .sidebar-mini-visible to an element will show it only when the sidebar is in mini mode
+                    - use .sidebar-mini-visible-b if you would like to be a block when visible (display: block)
+            -->
+        <nav id="sidebar">
+            <!-- Sidebar Content -->
+            <div class="sidebar-content">
+                <!-- Side Header -->
+                <div class="content-header content-header-fullrow px-15">
+                    <!-- Mini Mode -->
+                    <div class="content-header-section sidebar-mini-visible-b">
+                        <!-- Logo -->
+                        <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
+                            <span class="text-dual-primary-dark">c</span><span class="text-primary">b</span>
+                        </span>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Mini Mode -->
+
+                    <!-- Normal Mode -->
+                    <div class="content-header-section text-center align-parent sidebar-mini-hidden">
+                        <!-- Close Sidebar, Visible only on mobile screens -->
+                        <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                        <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none align-v-r" data-toggle="layout" data-action="sidebar_close">
+                            <i class="fa fa-times text-danger"></i>
+                        </button>
+                        <!-- END Close Sidebar -->
+
+                        <!-- Logo -->
+                        <div class="content-header-item">
+                            <a class="link-effect font-w700" href="../../department/admin/index.aspx">
+                             
+                                <img src="../../assets/logo.gif" alt="Image Not Found" class="img-fluid"/>
+                              
+                            </a>
+                        </div>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Normal Mode -->
+                </div>
+                <!-- END Side Header -->
+
+                <!-- Side User -->
+                <div class="content-side content-side-full content-side-user px-10 align-parent">
+                    <!-- Visible only in mini mode -->
+                    <div class="sidebar-mini-visible-b align-v animated fadeIn">
+                        <img class="img-avatar img-avatar32" src="<%=img %>" alt="">
+                    </div>
+                    <!-- END Visible only in mini mode -->
+
+                    <!-- Visible only in normal mode -->
+                    <div class="sidebar-mini-hidden-b text-center">
+                        <a class="img-link" href="<%=img %>">
+                            <img class="img-avatar" src="<%=img %>" alt="">
+                        </a>
+                        <ul class="list-inline mt-10">
+                            <li class="list-inline-item">
+                                <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase" href="#"><b>Welcome, </b><%=name%></a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!-- END Visible only in normal mode -->
+                </div>
+                <!-- END Side User -->
+
+                <!-- Side Navigation -->
+                <div class="content-side content-side-full">
+                    <ul class="nav-main">
+                        <li>
+                            <a class="active" href="../../department/admin/index.aspx">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="sidebar-mini-hide">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <%--<li class="nav-main-heading"><span class="sidebar-mini-visible">UI</span><span class="sidebar-mini-hidden">User Interface</span></li>--%>
+                       
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-industry"></i><span class="sidebar-mini-hide">Customer</span></a>
+                            <ul>
+                                <li>
+                                    <a href="../../task/site/add.aspx">Add Customer</a>
+                                </li>
+                                <li>
+                                    <a href="../../task/site/view.aspx">View Customer</a>
+                                </li>
+                             </ul>
+                        </li>
+                       
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i><span class="sidebar-mini-hide">Jobs</span></a>
+                            <ul>
+                                 
+                                <li>
+                                    <a href="../../task/work/add.aspx">Add Job</a>
+                                </li>
+                                <li>
+                                    <a href="../../task/work/view.aspx">View Jobs</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-calendar-check-o"></i><span class="sidebar-mini-hide">Schedule</span></a>
+                            <ul>
+                                 
+                                <li>
+                                    <a href="../../task/schedule/add.aspx">Add Schedule</a>
+                                </li>
+                                <li>
+                                    <a href="../../task/schedule/view.aspx">View Schedule</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-map-marker"></i><span class="sidebar-mini-hide">Maps</span></a>
+                            <ul>
+                                <li>
+                                    <a href="../../task/location/empmap.aspx">Live Location</a>
+                                </li>
+                                 <li>
+                                    <a href="../../task/location/employee.aspx">Employee Location</a>
+                                </li>
+                                <li>
+                                    <a href="../../task/location/taskmap.aspx">Task map</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                         <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">
+                                <i class="fa fa-users"></i>
+                                <span class="sidebar-mini-hide">Employee</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="../../task/employee/add.aspx">Add Employee</a>
+                                </li>
+                                <li>
+                                    <a href="../../task/employee/view.aspx">View Employee</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                      
+                        
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-file" aria-hidden="true"></i><span class="sidebar-mini-hide">Reports</span></a>
+                            <ul>
+                                <li>
+                                    <a href="../../task/reports/dailyactivity.aspx">Daily Activities Report</a>
+                                </li>
+                                <li>
+                                    <a href="../../task/reports/empreport.aspx">Employee Report</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="../../task/reports/jobcoderpt.aspx">Delivery Report</a>
+                                </li>
+								<%-- <li>
+                                    <a href="../../task/reports/checkin-checkout-office.aspx">Check In/Out From Office Report</a>
+                                </li>--%>
+                            </ul>
+                        </li>
+                       
+                          <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-gears" aria-hidden="true"></i><span class="sidebar-mini-hide">Settings</span></a>
+                            <ul>
+
+                                <li>
+                                    <a href="../../task/reference/add.aspx">Refereances</a>
+                                </li>
+
+                                <li>
+                                    <a href="../../task/truck/addview.aspx">Trucks</a>
+                                </li>
+                              
+                                   <%--<li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class=""></i><span class="sidebar-mini-hide">Department</span></a>
+                            <ul>
+                                <li>
+                                    <a href="../../task/department/add.aspx">Add Department</a>
+                                </li>
+                                <li>
+                                    <a href="../../task/department/view.aspx">View Department</a>
+                                </li>
+                             </ul>
+
+                        </li>--%>
+                              
+                            </ul>
+                        </li>
+                          
+
+                    </ul>
+                </div>
+                <!-- END Side Navigation -->
+            </div>
+            <!-- Sidebar Content -->
+        </nav>
+        <!-- END Sidebar -->
+
+        <!-- Header -->
+        <header id="page-header">
+            <!-- Header Content -->
+            <div class="content-header">
+                <!-- Left Section -->
+                <div class="content-header-section">
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="sidebar_toggle">
+                        <i class="fa fa-navicon"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+
+                    <!-- Open Search Section -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <!-- END Open Search Section -->
+
+                    <!-- Layout Options (used just for demonstration) -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-circle btn-dual-secondary" id="page-header-options-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-wrench"></i>
+                        </button>
+                        <div class="dropdown-menu min-width-300" aria-labelledby="page-header-options-dropdown">
+                            <h5 class="h6 text-center py-10 mb-10 border-b text-uppercase">Settings</h5>
+                            <h6 class="dropdown-header">Header</h6>
+                            <div class="row gutters-tiny text-center mb-5">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-sm btn-block btn-alt-secondary" data-toggle="layout" data-action="header_fixed_toggle">Fixed Mode</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-sm btn-block btn-alt-secondary d-none d-lg-block mb-10" data-toggle="layout" data-action="header_style_classic">Classic Style</button>
+                                </div>
+                            </div>
+                            <h6 class="dropdown-header">Sidebar</h6>
+                            <div class="row gutters-tiny text-center mb-5">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-sm btn-block btn-alt-secondary mb-10" data-toggle="layout" data-action="sidebar_style_inverse_off">Light</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-sm btn-block btn-alt-secondary mb-10" data-toggle="layout" data-action="sidebar_style_inverse_on">Dark</button>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- END Layout Options -->
+                </div>
+                <!-- END Left Section -->
+
+                <!-- Right Section -->
+                <div class="content-header-section">
+                    <!-- User Dropdown -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user d-sm-none"></i>
+                            <span class="d-none d-sm-inline-block"><%=name%></span>
+                            <i class="fa fa-angle-down ml-5"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right min-width-200" aria-labelledby="page-header-user-dropdown">
+                            <h5 class="h6 text-center py-10 mb-5 border-b text-uppercase">Admin</h5>
+                            
+                            
+                            
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../../logout.aspx">
+                                <i class="si si-logout mr-5"></i>Sign Out
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END User Dropdown -->
+
+                 
+
+                    
+                </div>
+                <!-- END Right Section -->
+            </div>
+            <!-- END Header Content -->
+
+            <!-- Header Search -->
+            <div id="page-header-search" class="overlay-header">
+                <div class="content-header content-header-fullrow">
+                    <form action="#" method="post">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <!-- Close Search Section -->
+                                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                                <button type="button" class="btn btn-secondary" data-toggle="layout" data-action="header_search_off">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                                <!-- END Close Search Section -->
+                            </div>
+                            <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Search or ESC.."  name="page-header-search-input">
+                            <%--<div class="input-group-append">
+                                <button type="submit" class="btn btn-secondary">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>--%>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END Header Search -->
+
+            <!-- Header Loader -->
+            <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
+            <div id="page-header-loader" class="overlay-header bg-primary">
+                <div class="content-header content-header-fullrow text-center">
+                    <div class="content-header-item">
+                        <i class="fa fa-sun-o fa-spin text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- END Header Loader -->
+        </header>
+        <!-- END Header -->
+
+
+
+       
+
+
+        <form id="form1" runat="server"  style="min-height:541px;">
+            <div id="dev-table">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+
+       
+
+    
+
+   <!-- Footer -->
+        <footer id="page-footer" class="opacity-1 ">
+            <div class="content py-20 font-size-xs clearfix">
+                <div class="container font-size-h6" style="text-align:center">
+                    Proudly Powered.
+                </div>
+            
+            </div>
+        </footer>
+        <!-- END Footer -->
+
+
+    </div>
+      
+
+
+ 
+
+    <!-- END Onboarding Modal -->
+
+    <script src="../../assets/js/codebase.core.min.js"></script>
+
+    <script src="../../assets/js/codebase.app.min.js"></script>
+
+    <!-- Page JS Plugins -->
+    <script src="../../assets/js/plugins/chartjs/Chart.bundle.min.js"></script>
+    <script src="../../assets/js/plugins/slick/slick.min.js"></script>
+
+    <script src="../../assets/js/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+    
+    <script src="../../assets/js/plugins/select2/js/select2.full.min.js"></script>
+
+    <script src="../../assets/js/plugins/jquery-auto-complete/jquery.auto-complete.min.js"></script>
+
+    <script src="../../assets/js/plugins/dropzonejs/dropzone.min.js"></script>
+
+    <script src="../../assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
+
+    <script src="../../assets/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    
+    <script src="../../assets/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+     
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script src="../../assets/js/plugins/gmapsjs/gmaps.min.js"></script>
+
+    <script src="../../assets/js/plugins/flot/jquery.flot.min.js"></script>
+    <script src="../../assets/js/plugins/flot/jquery.flot.resize.min.js"></script>
+
+    <script src="../../assets/js/plugins/nestable2/jquery.nestable.min.js"></script>
+
+    <script>jQuery(function(){ Codebase.helpers(['select2']); });</script>
+    <script>jQuery(function(){ Codebase.helpers('easy-pie-chart'); });</script>
+    <!-- Page JS Code -->
+    <script src="../../assets/js/pages/be_comp_nestable.min.js"></script>
+ <script src="../../assets/js/pages/be_comp_charts.min.js"></script>
+    <script src="../../assets/js/pages/be_ui_activity.min.js"></script>
+    <script src="../../assets/js/pages/be_tables_datatables.min.js"></script>
+    <script src="../../assets/js/pages/be_comp_maps_google.min.js"></script>
+    <script src="../../assets/js/pages/be_forms_plugins.min.js"></script>
+    <script src="../../assets/js/pages/be_forms_wizard.min.js"></script>
+    <script src="../../assets/js/pages/be_pages_dashboard.min.js"></script>
+    <script src="../../assets/custom.js"></script>
+
+
+      <script src="../../assets/js/plugins/jquery-vide/jquery.vide.min.js"></script>
+     <script>
+
+         /**
+ *   I don't recommend using this plugin on large tables, I just wrote it to make the demo useable. It will work fine for smaller tables 
+ *   but will likely encounter performance issues on larger tables.
+ *
+ *		<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+ *		$(input-element).filterTable()
+ *		
+ *	The important attributes are 'data-action="filter"' and 'data-filters="#table-selector"'
+ */
+         (function () {
+             'use strict';
+             var $ = jQuery;
+             $.fn.extend({
+                 filterTable: function () {
+                     return this.each(function () {
+                         $(this).on('keyup', function (e) {
+                             $('.filterTable_no_results').remove();
+                             var $this = $(this),
+                                 search = $this.val().toLowerCase(),
+                                 target = $this.attr('data-filters'),
+                                 $target = $(target),
+                                 $rows = $target.find('tbody tr');
+
+                             if (search == '') {
+                                 $rows.show();
+                             } else {
+                                 $rows.each(function () {
+                                     var $this = $(this);
+                                     $this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+                                 })
+                                 if ($target.find('tbody tr:visible').size() === 0) {
+                                     var col_count = $target.find('tr').first().find('td').size();
+                                     var no_results = $('<tr class="filterTable_no_results"><td colspan="' + col_count + '">No results found</td></tr>')
+                                     $target.find('tbody').append(no_results);
+                                 }
+                             }
+                         });
+                     });
+                 }
+             });
+             $('[data-action="filter"]').filterTable();
+         })(jQuery);
+
+         $(function () {
+             // attach table filter plugin to inputs
+             $('[data-action="filter"]').filterTable();
+
+             $('.container').on('click', '.panel-heading span.filter', function (e) {
+                 var $this = $(this),
+                     $panel = $this.parents('.panel');
+
+                 $panel.find('.panel-body').slideToggle();
+                 if ($this.css('display') != 'none') {
+                     $panel.find('.panel-body input').focus();
+                 }
+             });
+             $('[data-toggle="tooltip"]').tooltip();
+         })
+
+    </script>
+
+   
+</body>
+</html>

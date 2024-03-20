@@ -1,0 +1,229 @@
+/* 
+* Template Name: Earthyellow - Shopping HTML Template
+*/
+/*==========================================
+* TABLE OF CONTENTS
+* =========================================== */
+/*
+    * 01. Imported Styles such as Fonts
+    * 02. Global and Common Styles
+    * 03. Header Style  
+    * 04. Footer Style
+    * 05. Pages Style
+    * 06. Rate request page Style
+    * 07. Search page Style
+   
+*/
+
+
+/*** 01. Imported Styles such as Fonts ***/
+/*@import url(/*netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);*/
+@import url('https:/*fonts.googleapis.com/css?family=Roboto');
+
+/*** 02. Global and Common Styles ***/
+.styled-checkbox {
+    position: absolute; 
+    opacity: 0; 
+}  
+.styled-checkbox + label {
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    padding: 0;
+}
+.styled-checkbox + label:before {
+    content: '';
+    /* margin-right: 10px; */
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 1px solid #000;
+}
+
+/* .styled-checkbox:hover + label:before {
+    background: #fff;
+    border: 1px solid #000;
+} */
+
+
+.styled-checkbox:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+/* .styled-checkbox:checked + label:before {
+    background: #f35429;
+} */
+
+.styled-checkbox:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+}
+
+.styled-checkbox:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+}
+
+.styled-checkbox:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: black;
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+    2px 0 0 black,
+    4px 0 0 black,
+    4px -2px 0 black,
+    4px -4px 0 black,
+    4px -6px 0 black,
+    4px -8px 0 black;
+    transform: rotate(45deg);
+}
+.vertical_middel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container-fluid{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.border-2{
+    border: 2px solid black;
+}
+.border-r{
+    border-right: 1px solid black;
+}
+.border-b{
+    border-bottom: 1px solid black;
+}
+.border-t{
+    border-top: 1px solid black;
+}
+.border-l{
+    border-left: 1px solid black;
+}
+.border-1{
+    border: 1px solid black;
+}
+.paper_page{
+   
+    margin: auto;    
+}
+p{
+    margin: 0;
+}
+.logo_sec{
+    padding: 15px 20px 10px 25px;
+    margin-bottom: 30px;
+}
+.pb-31{
+    padding-bottom: 31px;
+}
+.row{
+    margin: 0;
+}
+.sub_row .col-5,.sub_row .col-4{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.line-height-1{
+    line-height: 1;
+}
+hr{
+    height: 10px;
+    background-color: gray;
+    margin: 0;
+}
+.sec_2 .col-1.checkbox_col{
+    flex: 0 0 6.33333%;
+    max-width: 6.33333%;
+}
+.sec_2 .col-1{
+    flex: 0 0 10.33333%;
+    max-width: 10.33333%;
+}
+.sec_2 .custom_2{
+    flex: 0 0 18.63333%;
+    max-width: 18.63333%;
+}
+.mr_column .custom_3{
+    flex: 0 0 26.93333%;
+    max-width:26.93333%;
+}
+.small_checkbox .styled-checkbox + label:before{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: -15px;
+}
+.small_checkbox .styled-checkbox + label{
+    margin-left: 15px;
+}
+.small_checkbox .styled-checkbox:checked + label:after{
+    left: -14px;
+    top: 12px;
+    box-shadow: 1px 0 0 black, 2px 0 0 black, 2px 0px 0 black, 
+                2px -2px 0 black, 2px -4px 0 black, 2px -6px 0 black;
+}
+.Vehical_planning .check_vist{
+    margin-top: 10px;
+}
+.text_justify_left{
+    text-align: left;
+    justify-content: left;
+}
+.text_justify_bottom{
+    text-align: right;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.form_2{
+    font-size: 14px;
+}
+.pb-12{
+    padding-bottom: 12px;
+}
+th{
+    text-align: center;
+}
+tr td:first-child{
+    text-align: center;
+}
+tr:not(last-child){
+    border-bottom: 1px solid #000;
+}
+tr th, tr td{
+    padding-left: 7px;
+}
+tr th:not(last-child), tr td:not(last-child){
+    border-right: 1px solid #000;
+}
+h1{
+    font-size: 46px;
+    font-weight: bolder;
+}
+h1 span{
+    font-size: 40px;
+    color: gray;
+    position: relative;
+}
+.form_no p.float-right{
+    color: royalblue;
+}
+h1 span::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    left: -40px;
+    position: absolute;
+    bottom: 10px;
+}

@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\assets",
+    "\\department",
+    "\\department\\admin",
+    "\\task",
+    "\\task\\employee",
+    "\\task\\schedule",
+    "\\task\\work"
+  ],
+  "SelectedNode": "\\task\\employee\\add.aspx",
+  "PreviewInSolutionExplorer": false
+}
